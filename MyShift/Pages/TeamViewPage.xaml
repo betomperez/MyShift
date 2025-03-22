@@ -4,14 +4,16 @@
              xmlns:lang="clr-namespace:MyShift.Resources.Languages"
              x:Class="MyShift.Pages.TeamViewPage"
              Title="{x:Static lang:AppStrings.TeamView}">
-    <Grid RowDefinitions="Auto, *, Auto">
-        <HorizontalStackLayout Grid.Row="0" Padding="10" Spacing="10" HorizontalOptions="Center">
-            <Button Text="◀" />
-            <Label Text="Today" FontSize="Large"/>
-            <Button Text="▶" />
+    
+    <Grid RowDefinitions="Auto, Auto, *, Auto">
+        <DatePicker x:Name="DateView" Grid.Row="0" HorizontalOptions="Center" Format="dd/MM/yyyy"/>
+        <HorizontalStackLayout Grid.Row="1" Padding="10" Spacing="10" HorizontalOptions="Center">
+            <Button x:Name="YesterdayButton" Text="◀" Clicked="OnYesterdayButtonClicked"/>
+            <Button x:Name="HomeButton" Text="🔄" Clicked="OnHomeButtonClicked"/>
+            <Button x:Name="TomorrowButton"  Text="▶" Clicked="OnTomorrowButtonClicked" />
         </HorizontalStackLayout>
 
-        <VerticalStackLayout Grid.Row="1" VerticalOptions="Center">
+        <VerticalStackLayout Grid.Row="2" VerticalOptions="Center">
             <Grid RowDefinitions="*, *, *, *, *" ColumnDefinitions="*, *" HeightRequest="200">
                 <Label Grid.Row="0" Text="{x:Static lang:AppStrings.MorningShift}" HorizontalOptions="End"/>
                 <Label Grid.Row="0" Grid.Column="1" Text="Equipe A" HorizontalOptions="Start"/>
@@ -26,7 +28,7 @@
             </Grid>
         </VerticalStackLayout>
 
-        <VerticalStackLayout Grid.Row="2" Padding="10">
+        <VerticalStackLayout Grid.Row="3" Padding="10">
             <Label Text="{x:Static lang:AppStrings.Notes}"/>
             <Editor/>
         </VerticalStackLayout>
