@@ -1,9 +1,11 @@
 ﻿using MyShift.Models;
 using MyShift.Resources.Languages;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace MyShift.Services;
 
-class ShiftMananger
+public class ShiftMananger : INotifyPropertyChanged
 {
     private Dictionary<ShiftNames, List<string>> _shifts = new Dictionary<ShiftNames, List<string>>
     {
@@ -84,11 +86,67 @@ class ShiftMananger
         },
     };
 
-    public string? MorningShift { get; set; }
-    public string? AfternoonShift { get; set; }
-    public string? NightShift { get; set; }
-    public string? DayOffA { get; set; }
-    public string? DayOffB { get; set; }
+    private string? _morningShift;
+    public string? MorningShift
+    {
+        get => _morningShift; 
+        set 
+        { 
+            _morningShift = value; 
+            OnPropertyChanged();
+        }
+    }
+
+    private string? _afternoonShift;
+    public string? AfternoonShift
+    {
+        get => _afternoonShift; 
+        set 
+        { 
+            _afternoonShift = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string? _nightShift;
+
+    public string? NightShift
+    {
+        get => _nightShift;
+        set 
+        { 
+            _nightShift = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string? _dayOff;
+    public string? DayOff
+    {
+        get => _dayOff;
+        set 
+        { 
+            _dayOff = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string? _dayOffOT;
+    public string? DayOffOT
+    {
+        get => _dayOffOT;
+        set
+        {
+            _dayOffOT = value;
+            OnPropertyChanged();
+        }
+    }
+
+    public event PropertyChangedEventHandler? PropertyChanged;
+    protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
 
     public void RefreshShifts(DateOnly date, int offset)
     {
@@ -97,7 +155,7 @@ class ShiftMananger
         MorningShift = _shifts[ShiftNames.Morning][index];
         AfternoonShift = _shifts[ShiftNames.Afternoon][index];
         NightShift = _shifts[ShiftNames.Night][index];
-        DayOffA = _shifts[ShiftNames.DayOff][index];
-        DayOffB = _shifts[ShiftNames.DayOffOT][index];
+        DayOff = _shifts[ShiftNames.DayOff][index];
+        DayOffOT = _shifts[ShiftNames.DayOffOT][index];
     }
 }
