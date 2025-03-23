@@ -16,22 +16,22 @@
 
         <VerticalStackLayout Grid.Row="2" VerticalOptions="Center">
             <Grid RowDefinitions="*, *, *, *, *" ColumnDefinitions="*, *" HeightRequest="200">
-                <Label Grid.Row="0" Text="{x:Static lang:AppStrings.MorningShift}" HorizontalOptions="End"/>
-                <Label Grid.Row="0" Grid.Column="1" Text="{Binding MorningShift}" HorizontalOptions="Start"/>
-                <Label Grid.Row="1" Text="{x:Static lang:AppStrings.AfternoonShift}" HorizontalOptions="End"/>
-                <Label Grid.Row="1" Grid.Column="1" Text="{Binding AfternoonShift}" HorizontalOptions="Start"/>
-                <Label Grid.Row="2" Text="{x:Static lang:AppStrings.NightShift}" HorizontalOptions="End"/>
-                <Label Grid.Row="2" Grid.Column="1" Text="{Binding NightShift}" HorizontalOptions="Start"/>
-                <Label Grid.Row="3" Text="{x:Static lang:AppStrings.DayOff}" HorizontalOptions="End"/>
-                <Label Grid.Row="3" Grid.Column="1" Text="{Binding DayOff}" HorizontalOptions="Start"/>
-                <Label Grid.Row="4" Text="{x:Static lang:AppStrings.DayOff}" HorizontalOptions="End"/>
-                <Label Grid.Row="4" Grid.Column="1" Text="{Binding DayOffOT}" HorizontalOptions="Start"/>
+                <Label Grid.Row="0" Text="{x:Static lang:AppStrings.MorningShift}" HorizontalOptions="End" Margin="0,0,10,0"/>
+                <Label Grid.Row="1" Text="{x:Static lang:AppStrings.AfternoonShift}" HorizontalOptions="End" Margin="0,0,10,0"/>
+                <Label Grid.Row="2" Text="{x:Static lang:AppStrings.NightShift}" HorizontalOptions="End" Margin="0,0,10,0"/>
+                <Label Grid.Row="3" Text="{x:Static lang:AppStrings.DayOff}" HorizontalOptions="End" Margin="0,0,10,0"/>
+                <Label Grid.Row="4" Text="{x:Static lang:AppStrings.DayOffOT}" HorizontalOptions="End" Margin="0,0,10,0"/>
+                <Label Grid.Row="0" Grid.Column="1" Text="{Binding MorningShift}" HorizontalOptions="Start" Margin="10,0,0,0"/>
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding AfternoonShift}" HorizontalOptions="Start" Margin="10,0,0,0"/>
+                <Label Grid.Row="2" Grid.Column="1" Text="{Binding NightShift}" HorizontalOptions="Start" Margin="10,0,0,0"/>
+                <Label Grid.Row="3" Grid.Column="1" Text="{Binding DayOff}" HorizontalOptions="Start" Margin="10,0,0,0"/>
+                <Label Grid.Row="4" Grid.Column="1" Text="{Binding DayOffOT}" HorizontalOptions="Start" Margin="10,0,0,0"/>
             </Grid>
         </VerticalStackLayout>
 
         <VerticalStackLayout Grid.Row="3" Padding="10">
-            <Label Text="{x:Static lang:AppStrings.Notes}"/>
-            <Editor/>
+            <Label Text="{x:Static lang:AppStrings.Notes}" IsEnabled="False"/>
+            <Editor IsEnabled="False"/>
         </VerticalStackLayout>
         
     </Grid>

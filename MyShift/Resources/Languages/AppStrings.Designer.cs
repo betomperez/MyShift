@@ -79,6 +79,15 @@ namespace MyShift.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Day Off (OT):.
+        /// </summary>
+        internal static string DayOffOT {
+            get {
+                return ResourceManager.GetString("DayOffOT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 1st Afternoon.
         /// </summary>
         internal static string FirstAfternoon {

@@ -123,6 +123,9 @@
   <data name="DayOff" xml:space="preserve">
     <value>Day Off:</value>
   </data>
+  <data name="DayOffOT" xml:space="preserve">
+    <value>Day Off (OT):</value>
+  </data>
   <data name="FirstAfternoon" xml:space="preserve">
     <value>1st Afternoon</value>
   </data>

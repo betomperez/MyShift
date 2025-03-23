@@ -123,6 +123,9 @@
   <data name="DayOff" xml:space="preserve">
     <value>Folga:</value>
   </data>
+  <data name="DayOffOT" xml:space="preserve">
+    <value>Folga (H.E.):</value>
+  </data>
   <data name="FirstAfternoon" xml:space="preserve">
     <value>1ª Tarde</value>
   </data>
