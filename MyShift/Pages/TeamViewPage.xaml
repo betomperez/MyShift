@@ -39,7 +39,7 @@
         <Frame Grid.Row="2">
             <VerticalStackLayout Padding="10">
                 <Label Text="{x:Static lang:AppStrings.Notes}"/>
-                <Editor x:Name="EditorNotes" TextChanged="OnEditorNotesTextChanged" HeightRequest="{OnPlatform Android=300}"/>
+                <Editor x:Name="EditorNotes" TextChanged="OnEditorNotesTextChanged" VerticalOptions="End" HeightRequest="{OnPlatform Android=200}"/>
             </VerticalStackLayout>
         </Frame>
 
