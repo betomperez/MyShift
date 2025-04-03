@@ -1,41 +1,41 @@
-# App de Escalas 6x4
+# 6x4 Shift Schedule App
 
-Este aplicativo foi desenvolvido para auxiliar na visualização e gerenciamento de escalas 6x4, mostrando os turnos, folgas e permitindo anotações diárias.
+This application was developed to assist in the visualization and management of 6x4 shift schedules, displaying shifts, days off, and allowing daily notes.
 
-## Sobre a Escala 6x4
+## About the 6x4 Schedule
 
-A escala 6x4 é um sistema de turnos que organiza as equipes em ciclos de trabalho e folga. Neste aplicativo, as equipes são nomeadas de A a E, com os seguintes padrões:
+The 6x4 schedule is a shift system that organizes teams in work and rest cycles. In this application, teams are named from A to E, with the following patterns:
 
-* **Equipes A e B:** 4 manhãs, 2 noites e 4 folgas.
-* **Equipes D e E:** 4 tardes, 2 noites e 4 folgas.
-* **Equipe C:** 2 manhãs, 2 tardes, 2 noites e 4 folgas.
+* **Teams A and B:** 4 mornings, 2 nights, and 4 days off.
+* **Teams D and E:** 4 afternoons, 2 nights, and 4 days off.
+* **Team C:** 2 mornings, 2 afternoons, 2 nights, and 4 days off.
 
-## Versão Atual: 1.0.0
+## Current Version: 1.1.0
 
-Esta é a primeira versão do aplicativo, com as seguintes funcionalidades:
+This is the first version of the application, with the following features:
 
-* **Visualização de Equipes:** Exibe as equipes (A a E) da escala 6x4, seus turnos e folgas conforme o padrão descrito acima.
-* **Anotações Diárias:** Permite adicionar anotações específicas para cada dia.
-* **Interface Intuitiva:** Design simples e fácil de usar.
+* **Team Visualization:** Displays the teams (A to E) of the 6x4 schedule, their shifts, and days off according to the pattern described above.
+* **Daily Notes:** Allows adding specific notes for each day.
+* **Intuitive Interface:** Simple and easy-to-use design.
 
-## Próximas Funcionalidades
+## Upcoming Features
 
-Estamos trabalhando em melhorias e novas funcionalidades para as próximas versões:
+We are working on improvements and new features for future versions:
 
-* **Suporte a Outras Escalas:** Adição de suporte para outras escalas com nomenclaturas diferentes.
-* **Visão de Calendário:** Implementação de um calendário interativo com cores para representar os turnos de cada equipe.
-* **Melhorias de Desempenho:** Otimização do aplicativo para melhor desempenho e velocidade.
-* **Interface do usuário aprimorada:** Melhorias no design para melhor experiência do usuário.
+* **Support for Other Schedules:** Addition of support for other schedules with different nomenclatures.
+* **Calendar View:** Implementation of an interactive calendar with colors to represent the shifts of each team.
+* **Performance Improvements:** Optimization of the application for better performance and speed.
+* **Enhanced User Interface:** Design improvements for a better user experience.
 
-## Contribuição
+## Contribution
 
-Contribuições são bem-vindas! Se você tiver sugestões, correções de bugs ou novas funcionalidades, sinta-se à vontade para abrir uma issue ou enviar um pull request.
+Contributions are welcome! If you have suggestions, bug fixes, or new features, feel free to open an issue or submit a pull request.
 
-## Licença
+## License
 
-Este projeto está sob a licença MIT.
+This project is under the MIT license.
 
-## Contato
+## Contact
 
 * Humberto Mota Perez
 * betomperez@gmail.com
