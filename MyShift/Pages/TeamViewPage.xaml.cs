@@ -1,4 +1,6 @@
+using MyShift.Models;
 using MyShift.Services;
+using MyShift.Resources.Languages;
 
 namespace MyShift.Pages;
 
@@ -7,57 +9,71 @@ public partial class TeamViewPage : ContentPage
     private ShiftMananger _shiftManager;
     private int offset = 4;
 
-    private NotesMananger _notesManager;
     public TeamViewPage()
-	{
-		InitializeComponent();
+    {
+        InitializeComponent();
         _shiftManager = new ShiftMananger();
-        _notesManager = new NotesMananger();
         BindingContext = _shiftManager;
         _shiftManager.RefreshShifts(DateOnly.FromDateTime(DateView.Date), offset);
+        UpdateLabelAndEditor();
+    }
+
+    private void UpdateLabelAndEditor()
+    {
+        _shiftManager.RefreshShifts(DateOnly.FromDateTime(DateView.Date), offset);
+        EditorNotes.Text = App.NoteRepo.GetNoteByDate(DateView.Date)?.TextNote;
     }
 
     private void OnYesterdayButtonClicked(object sender, EventArgs e)
     {
         DateView.Date = DateView.Date.AddDays(-1);
-        _shiftManager.RefreshShifts(DateOnly.FromDateTime(DateView.Date), offset);
+        UpdateLabelAndEditor();
     }
 
     private void OnHomeButtonClicked(object sender, EventArgs e)
     {
         DateView.Date = DateTime.Today;
-        _shiftManager.RefreshShifts(DateOnly.FromDateTime(DateView.Date), offset);
+        UpdateLabelAndEditor();
     }
 
     private void OnTomorrowButtonClicked(object sender, EventArgs e)
     {
         DateView.Date = DateView.Date.AddDays(1);
-        _shiftManager.RefreshShifts(DateOnly.FromDateTime(DateView.Date), offset);
+        UpdateLabelAndEditor();
     }
 
     private void OnDateViewDateSelected(object sender, DateChangedEventArgs e)
     {
+
         _shiftManager.RefreshShifts(DateOnly.FromDateTime(DateView.Date), offset);
         DateTime selectedDateTime = e.NewDate;
-        if (!_notesManager.upToDateDictionary) 
-        {
-            _notesManager.LoadNotes();
-            _notesManager.upToDateDictionary = true;
-        }
-        if (_notesManager.notes.ContainsKey(selectedDateTime))
-        {
-            EditorNotes.Text = _notesManager.notes[selectedDateTime];
-        }
-        else
-        {
-            EditorNotes.Text = "";
-        }
+        Note selectedNote = App.NoteRepo.GetNoteByDate(selectedDateTime);
+        EditorNotes.Text = selectedNote?.TextNote;
     }
 
-    private void OnEditorNotesTextChanged(object sender, TextChangedEventArgs e)
+    private void OnSaveButtonClicked(object sender, EventArgs e)
     {
         DateTime selectedDate = DateView.Date;
-        _notesManager.notes[selectedDate] = EditorNotes.Text;
-        _notesManager.SaveNotes();
+        Note newNote = new Note
+        {
+            Date = selectedDate,
+            TextNote = EditorNotes.Text
+        };
+        App.NoteRepo.AddNewNoteOrUpdateExistingNote(newNote);
+        DisplayAlert(AppStrings.Save, App.NoteRepo.StatusMessage, AppStrings.Ok);
+    }
+
+    private void OnDeleteButtonClicked(object sender, EventArgs e)
+    {
+        DateTime selectedDate = DateView.Date;
+        Note existingNote = App.NoteRepo.GetNoteByDate(selectedDate);
+        if (existingNote != null)
+        {
+            App.NoteRepo.DeleteNoteByDate(existingNote.Date);
+            EditorNotes.Text = string.Empty;
+            DisplayAlert(AppStrings.DeleteNote, App.NoteRepo.StatusMessage, AppStrings.Ok);
+        }
+        else
+            DisplayAlert(AppStrings.Error, AppStrings.NullNote, AppStrings.Ok);
     }
 }
