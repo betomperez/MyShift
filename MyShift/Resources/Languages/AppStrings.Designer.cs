@@ -61,6 +61,15 @@ namespace MyShift.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Note added on.
+        /// </summary>
+        internal static string AddNote {
+            get {
+                return ResourceManager.GetString("AddNote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Afternoon:.
         /// </summary>
         internal static string AfternoonShift {
@@ -84,6 +93,33 @@ namespace MyShift.Resources.Languages {
         internal static string DayOffOT {
             get {
                 return ResourceManager.GetString("DayOffOT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Apagar.
+        /// </summary>
+        internal static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Note deleted on.
+        /// </summary>
+        internal static string DeleteNote {
+            get {
+                return ResourceManager.GetString("DeleteNote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        internal static string Error {
+            get {
+                return ResourceManager.GetString("Error", resourceCulture);
             }
         }
         
@@ -178,6 +214,33 @@ namespace MyShift.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to There is no note on this day.
+        /// </summary>
+        internal static string NullNote {
+            get {
+                return ResourceManager.GetString("NullNote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ok.
+        /// </summary>
+        internal static string Ok {
+            get {
+                return ResourceManager.GetString("Ok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        internal static string Save {
+            get {
+                return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 2nd Afternoon.
         /// </summary>
         internal static string SecondAfternoon {
@@ -246,6 +309,15 @@ namespace MyShift.Resources.Languages {
         internal static string ThirdMorning {
             get {
                 return ResourceManager.GetString("ThirdMorning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Note updated on.
+        /// </summary>
+        internal static string UpdateNote {
+            get {
+                return ResourceManager.GetString("UpdateNote", resourceCulture);
             }
         }
     }

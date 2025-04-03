@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddNote" xml:space="preserve">
+    <value>Note added on</value>
+  </data>
   <data name="AfternoonShift" xml:space="preserve">
     <value>Afternoon:</value>
   </data>
@@ -125,6 +128,15 @@
   </data>
   <data name="DayOffOT" xml:space="preserve">
     <value>Day Off (OT):</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Apagar</value>
+  </data>
+  <data name="DeleteNote" xml:space="preserve">
+    <value>Note deleted on</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
   </data>
   <data name="FirstAfternoon" xml:space="preserve">
     <value>1st Afternoon</value>
@@ -156,6 +168,15 @@
   <data name="Notes" xml:space="preserve">
     <value>Notes:</value>
   </data>
+  <data name="NullNote" xml:space="preserve">
+    <value>There is no note on this day</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
   <data name="SecondAfternoon" xml:space="preserve">
     <value>2nd Afternoon</value>
   </data>
@@ -179,5 +200,8 @@
   </data>
   <data name="ThirdMorning" xml:space="preserve">
     <value>3rd Morning</value>
+  </data>
+  <data name="UpdateNote" xml:space="preserve">
+    <value>Note updated on</value>
   </data>
 </root>

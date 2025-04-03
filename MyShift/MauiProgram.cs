@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using MyShift.Services;
 
 namespace MyShift;
 
@@ -15,8 +16,11 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
+		string dbPath = FileAccessHelper.GetLocalFilePath("notes.db3");
+		builder.Services.AddSingleton<NoteRepository>(s => ActivatorUtilities.CreateInstance<NoteRepository>(s, dbPath));
+
 #if DEBUG
-		builder.Logging.AddDebug();
+        builder.Logging.AddDebug();
 #endif
 
 		return builder.Build();
