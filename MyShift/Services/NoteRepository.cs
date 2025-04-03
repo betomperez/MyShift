@@ -74,7 +74,7 @@ public class NoteRepository
         {
             int result = 0;
             result = _conn.Delete<Note>(date);
-            StatusMessage = $"{result} {AppStrings.DeleteNote} {DateOnly.FromDateTime(date)}";
+            StatusMessage = $"{AppStrings.DeleteNote} {DateOnly.FromDateTime(date)}";
         }
         catch (Exception ex)
         {

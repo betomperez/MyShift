@@ -71,7 +71,7 @@ public partial class TeamViewPage : ContentPage
         {
             App.NoteRepo.DeleteNoteByDate(existingNote.Date);
             EditorNotes.Text = string.Empty;
-            DisplayAlert(AppStrings.DeleteNote, App.NoteRepo.StatusMessage, AppStrings.Ok);
+            DisplayAlert(AppStrings.Delete, App.NoteRepo.StatusMessage, AppStrings.Ok);
         }
         else
             DisplayAlert(AppStrings.Error, AppStrings.NullNote, AppStrings.Ok);
